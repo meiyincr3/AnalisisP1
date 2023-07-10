@@ -88,7 +88,7 @@ def primMayor(graph):
             continue
         
         # Agregar la arista al AEM
-        aem.append((u, v, graph[u][v][1]))  # Agregar el segundo valor (máximo) del peso al AEM
+        aem.append((u, v, weight))  # Agregar el segundo valor (máximo) del peso al AEM
         visited[v] = True
         
         # Agregar todas las aristas del nodo recién conectado a la cola de prioridad
@@ -123,7 +123,7 @@ def primPromedio(graph):
             continue
         
         # Agregar la arista al AEM
-        avg_weight = (graph[u][v][0] + graph[u][v][1]) / 2  # Calcular el promedio de los valores del intervalo
+        avg_weight = (weight + weight) / 2  # Calcular el promedio de los valores del intervalo
         aem.append((u, v, avg_weight))  # Agregar el promedio al AEM
         visited[v] = True
         
@@ -138,17 +138,17 @@ def primPromedio(graph):
 
 
 graph = create_random_graph(5, 10, 50)
-aem1 = primMenor(graph)
+#aem1 = primMenor(graph)
 #aem2 = primMayor(graph)
-#aem3 = primPromedio(graph)
+aem3 = primPromedio(graph)
 
 #IMPRIME TODOS LOS DATOS
 print_graph(graph)
 print("/////////////////////////////////")
 print(graph)
 print("/////////////////////////////////")
-print(aem1)
+#print(aem1)
 print("/////////////////////////////////")
 #print(aem2)
 print("/////////////////////////////////")
-#print(aem3)
+print(aem3)
